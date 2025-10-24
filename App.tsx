@@ -1,7 +1,12 @@
 // App.tsx
 import React from 'react';
 import AppNavigator from './navigations/index';
+import { KeyboardAvoidingView,Platform } from 'react-native';
 
 export default function App() {
-  return <AppNavigator />;
+  return <KeyboardAvoidingView
+                      style={{ flex: 1 }}
+                      behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+  <AppNavigator />;
+  </KeyboardAvoidingView>
 }

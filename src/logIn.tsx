@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import {
     View, Text, TextInput, Pressable,
-    KeyboardAvoidingView, Platform, ImageBackground,
+     ImageBackground,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
@@ -19,9 +19,6 @@ export default function LogIn() {
             <LinearGradient
                 colors={['rgba(0,0,0,0.15)', 'rgba(0,0,0,0.15)', 'rgba(3, 75, 25, 0.57)']}
                 style={{ flex: 1 }}>
-                <KeyboardAvoidingView
-                    style={{ flex: 1 }}
-                    behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
                     <View
                         style={{
                             flex: 1,
@@ -107,7 +104,6 @@ export default function LogIn() {
                             <Text style={{ color: '#0a3b2f', fontWeight: '700' }}>Create Account</Text>
                         </Text>
                     </View>
-                </KeyboardAvoidingView>
             </LinearGradient>
         </ImageBackground>
     );
