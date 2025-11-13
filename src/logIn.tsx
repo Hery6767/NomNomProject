@@ -70,7 +70,7 @@ export default function LogIn() {
                     </Pressable>
 
                     <Pressable
-                        onPress={() => navigation.navigate('Tabs')} // hoặc 'Home' tùy route bạn đặt
+                        onPress={() => navigation.navigate('Home')} // hoặc 'Home' tùy route bạn đặt
                         style={{
                             backgroundColor: '#0a3b2f',
                             paddingVertical: 14,
