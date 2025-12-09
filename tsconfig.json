@@ -3,7 +3,7 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
-    "src/onBoard.tsx"
+    "core/src/onBoard.tsx"
   ],
   "exclude": [
     "**/node_modules",

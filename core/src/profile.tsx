@@ -10,7 +10,7 @@ import {
     ScrollView,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import Feather from 'react-native-vector-icons/Feather';
 
 // Palette giống Home / Meals / List / Recipes
 const BRAND = '#0d4d3b';
@@ -30,7 +30,8 @@ export default function Profile() {
                 <View style={{ width: 24 }} />
                 <Text style={styles.headerTitle}>Profile</Text>
                 <Pressable hitSlop={8} onPress={() => { }}>
-                    <Ionicons name="settings-outline" size={20} color={BRAND2} />
+                    {/* Feather: dùng "settings" */}
+                    <Feather name="settings" size={20} color={BRAND2} />
                 </Pressable>
             </View>
 
@@ -51,7 +52,8 @@ export default function Profile() {
                         <Text style={styles.userEmail}>@example.com</Text>
                     </View>
                     <Pressable style={styles.editBtn}>
-                        <Ionicons name="pencil-outline" size={16} color={BRAND2} />
+                        {/* Feather: "edit-2" hoặc "edit-3" */}
+                        <Feather name="edit-2" size={16} color={BRAND2} />
                         <Text style={styles.editText}>Edit</Text>
                     </Pressable>
                 </View>
@@ -75,16 +77,16 @@ export default function Profile() {
                 {/* Section: Account */}
                 <Text style={styles.sectionLabel}>Account</Text>
                 <View style={styles.card}>
-                    <ProfileRow icon="person-outline" label="Personal information" />
-                    <ProfileRow icon="fast-food-outline" label="Food preferences" />
-                    <ProfileRow icon="key-outline" label="Change password" isLast />
+                    <ProfileRow icon="user" label="Personal information" />
+                    <ProfileRow icon="coffee" label="Food preferences" />
+                    <ProfileRow icon="lock" label="Change password" isLast />
                 </View>
 
                 {/* Section: App Settings */}
                 <Text style={styles.sectionLabel}>App Settings</Text>
                 <View style={styles.card}>
                     <ProfileRow
-                        icon="notifications-outline"
+                        icon="bell"
                         label="Notifications"
                         renderRight={() => (
                             <Switch
@@ -96,7 +98,7 @@ export default function Profile() {
                         )}
                     />
                     <ProfileRow
-                        icon="alarm-outline"
+                        icon="clock"
                         label="Meal reminders"
                         isLast
                         renderRight={() => (
@@ -113,14 +115,15 @@ export default function Profile() {
                 {/* Section: Help */}
                 <Text style={styles.sectionLabel}>Support & About</Text>
                 <View style={styles.card}>
-                    <ProfileRow icon="help-circle-outline" label="Help & FAQ" />
-                    <ProfileRow icon="mail-outline" label="Contact support" />
-                    <ProfileRow icon="information-circle-outline" label="About NomNom" isLast />
+                    <ProfileRow icon="help-circle" label="Help & FAQ" />
+                    <ProfileRow icon="mail" label="Contact support" />
+                    <ProfileRow icon="info" label="About NomNom" isLast />
                 </View>
 
                 {/* Logout */}
                 <Pressable style={styles.logoutBtn} onPress={() => { }}>
-                    <Ionicons name="log-out-outline" size={18} color="#b3261e" />
+                    {/* Feather: "log-out" */}
+                    <Feather name="log-out" size={18} color="#b3261e" />
                     <Text style={styles.logoutText}>Log out</Text>
                 </Pressable>
             </ScrollView>
@@ -146,14 +149,15 @@ function ProfileRow({ icon, label, isLast, renderRight }: RowProps) {
         >
             <View style={styles.rowLeft}>
                 <View style={styles.rowIconWrap}>
-                    <Ionicons name={icon as any} size={18} color={BRAND2} />
+                    <Feather name={icon} size={18} color={BRAND2} />
                 </View>
                 <Text style={styles.rowLabel}>{label}</Text>
             </View>
             {renderRight ? (
                 renderRight()
             ) : (
-                <Ionicons name="chevron-forward" size={18} color="rgba(0,0,0,0.3)" />
+                // Feather: dùng "chevron-right" thay vì "chevron-forward"
+                <Feather name="chevron-right" size={18} color="rgba(0,0,0,0.3)" />
             )}
         </Pressable>
     );
@@ -260,6 +264,7 @@ const styles = StyleSheet.create({
 
     logoutBtn: {
         marginTop: 20,
+        marginBottom: 70,
         borderRadius: 16,
         borderWidth: 1,
         borderColor: 'rgba(179,38,30,0.25)',
