@@ -1,0 +1,14 @@
+# Node modules
+node_modules/
+
+# Build
+android/app/build/
+ios/build/
+android/app/.cxx/
+android/.gradle/
+android/build/
+# Misc
+.env
+.DS_Store
+npm-debug.log
+yarn-error.log
